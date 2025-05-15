@@ -106,3 +106,11 @@ export reservation schema create using schema factory
 create reservation repo extending abtract repo<reservation document>, inject model<reservation document>
 add reservation repo as provider, DB module for feature & pass reservation schema with reservation document name
 create static DB module method to add model in for feature
+
+validation & logger
+since logger wil be used in every app, create & keep it libs/common module
+install nestjs-pino & pino-pretty
+in reservation main.ts use app.useLogger(app.get(Logger)) from nestjs-pino
+install class-validator & class-transformer
+in reservation main.ts use app.useGlobalPipes(new ValidationPipe({ whitelist: true }))
+in dto use class-validator to validate & transformer to convert/x-form into type
