@@ -1,8 +1,7 @@
-import { Injectable } from '@nestjs/common';
-import { Prop, SchemaFactory } from '@nestjs/mongoose';
+import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import { AbstractDocument } from '@app/common';
 
-@Injectable()
+@Schema({ versionKey: false })
 export class UserDocument extends AbstractDocument {
   @Prop()
   email: string;
