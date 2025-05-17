@@ -9,7 +9,7 @@ services:
       - 3000:3000
     volumes:
       - .:/usr/src/app
-
+      
   auth:
     build:
       context: .
@@ -20,7 +20,7 @@ services:
       - 3001:3001
     volumes:
       - .:/usr/src/app
-
+      
   mongo:
     image: mongo
     ports:
