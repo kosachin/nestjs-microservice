@@ -22,6 +22,7 @@ import { UsersModule } from './users/users.module';
       }),
     }),
     ConfigModule.forRoot({
+      isGlobal: true,
       validationSchema: Joi.object({
         JWT_SECRET: Joi.string().required(),
         JWT_EXPIRATION: Joi.string().required(),
