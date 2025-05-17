@@ -114,3 +114,14 @@ in reservation main.ts use app.useLogger(app.get(Logger)) from nestjs-pino
 install class-validator & class-transformer
 in reservation main.ts use app.useGlobalPipes(new ValidationPipe({ whitelist: true }))
 in dto use class-validator to validate & transformer to convert/x-form into type
+
+
+pnpm i @nestjs/passport passport passport-local
+pnpm i -D @types/passport-local
+pnpm i @nestjs/jwt passport-jwt
+pnpm i -D @types/passport-jwt
+remove common config servivce
+use config module,joi on apps,inject config service for jwt mdoule config in auth app
+use config service on DB module
+create separate env,add validation in config module via joi
+also set port via env
