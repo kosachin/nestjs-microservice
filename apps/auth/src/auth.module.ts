@@ -20,10 +20,12 @@ import { UsersModule } from './users/users.module';
           expiresIn: `${configService.get<string>('JWT_EXPIRATION')}s`,
         },
       }),
+      inject: [ConfigService],
     }),
     ConfigModule.forRoot({
       isGlobal: true,
       validationSchema: Joi.object({
+        MONGODB_URI: Joi.string().required(),
         JWT_SECRET: Joi.string().required(),
         JWT_EXPIRATION: Joi.string().required(),
       }),
